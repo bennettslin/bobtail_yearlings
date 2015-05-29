@@ -12,6 +12,19 @@
 
 module.exports = {
 
+  connections: {
+    prodMongoServer: {
+      adapter: 'sails-mongo',
+
+      // this is defined in Heroku config
+      url: process.env.MONGOLAB_URI
+    }
+  },
+
+  models: {
+    connection: 'prodMongoServer'
+  }
+
   /***************************************************************************
    * Set the default database connection for models in the production        *
    * environment (see config/connections.js and config/models.js )           *
