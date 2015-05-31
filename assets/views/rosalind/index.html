@@ -1,0 +1,31 @@
+<h1>Rosalind Franklin</h1>
+
+<div class="btn-group" dropdown is-open="status.isopen">
+
+  <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
+    {{songTitles[currentSongIndex]}} <span class="caret"></span>
+  </button>
+
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#" ng-click="changeSong(0)">Young Rosalind at the World's Fair</a></li>
+    <li><a href="#" ng-click="changeSong(1)">All the Peppy Paulinas</a></li>
+    <li><a href="#" ng-click="changeSong(2)">Coffee in a Crucible</a></li>
+    <li><a href="#" ng-click="changeSong(3)">Ruptures</a></li>
+    <li><a href="#" ng-click="changeSong(4)">Photograph 51</a></li>
+    <li><a href="#" ng-click="changeSong(5)">Unhatched</a></li>
+    <li><a href="#" ng-click="changeSong(6)">Honest Jim</a></li>
+    <li><a href="#" ng-click="changeSong(7)">Rosalind's Mosaic Path</a></li>
+    <li><a href="#" ng-click="changeSong(8)">Last Labours</a></li>
+    <li><a href="#" ng-click="changeSong(9)">Whale Fall</a></li>
+  </ul>
+</div>
+
+<div>Sound Player</div>
+
+<div>
+  <tabset justified="true">
+    <tab heading="Comic"><div ng-include src="'views/rosalind/comic.html'"></div></tab>
+    <tab heading="Lyrics"><div ng-include src="'views/rosalind/' + songUrls[currentSongIndex] + '.html'"></div></tab>
+    <tab heading="Scores"><div ng-include src="'views/rosalind/scores.html'"></div></tab>
+  </tabset>
+</div>

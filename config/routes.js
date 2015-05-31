@@ -34,12 +34,6 @@ module.exports.routes = {
 
   "/": "PageController.index",
 
-  "post /api/post/:postId/comments": "PostController.addComment",
-
-  "get /api/auth": "AuthController.check",
-  "post /api/auth": "AuthController.login",
-  "delete /api/auth": "AuthController.logout",
-
   // this means that any get request goes to this controller
   // assets bypass this route, and anything starting with api also bypasses this route
   "get *": {

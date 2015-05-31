@@ -8,10 +8,7 @@
 module.exports = {
 
   index: function(req, res) {
-
-    // specific to Sails, this renders page in layout
     res.view('page/index');
-
   }
 
 };

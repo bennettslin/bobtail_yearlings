@@ -37,3 +37,6 @@ View
 ====
 * layout.ejs, include all links and scripts, and move to head
 
+Troubleshoot
+============
+* if mongod instance is already running: ps ax | grep mongod, then killall mongod

@@ -1,0 +1,38 @@
+<h1>Yearling's Bobtail</h1>
+
+<div class="btn-group" dropdown is-open="status.isopen">
+
+  <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
+    {{songTitles[currentSongIndex]}} <span class="caret"></span>
+  </button>
+
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#" ng-click="changeSong(0)">Didi</a></li>
+    <li><a href="#" ng-click="changeSong(1)">Willy the Cocoa</a></li>
+    <li><a href="#" ng-click="changeSong(2)">Dear Saskia</a></li>
+    <li><a href="#" ng-click="changeSong(3)">Odin</a></li>
+    <li><a href="#" ng-click="changeSong(4)">Ash Wednesday</a></li>
+    <li><a href="#" ng-click="changeSong(5)">Pchelka's Starry Journey</a></li>
+    <li><a href="#" ng-click="changeSong(6)">M</a></li>
+    <li><a href="#" ng-click="changeSong(7)">Good Night, Sita</a></li>
+    <li><a href="#" ng-click="changeSong(8)">Grasshoppers Lie Heavy</a></li>
+    <li><a href="#" ng-click="changeSong(9)">Constellations!</a></li>
+    <li><a href="#" ng-click="changeSong(10)">Look Back in Anger</a></li>
+    <li><a href="#" ng-click="changeSong(11)">Garryowen</a></li>
+    <li><a href="#" ng-click="changeSong(12)">On a Golden Cord</a></li>
+    <li><a href="#" ng-click="changeSong(13)">Kyon?</a></li>
+    <li><a href="#" ng-click="changeSong(14)">Uncanny Valley Boy</a></li>
+    <li><a href="#" ng-click="changeSong(15)">Cremated</a></li>
+    <li><a href="#" ng-click="changeSong(16)">Vegan Proclamation</a></li>
+    <li><a href="#" ng-click="changeSong(17)">My 100,000th Dream</a></li>
+  </ul>
+</div>
+
+<div>Sound Player</div>
+
+<div>
+  <tabset justified="true">
+    <tab heading="Lyrics"><div ng-include src="'views/yearling/' + songUrls[currentSongIndex] + '.html'"></div></tab>
+    <tab heading="Scores"><div ng-include src="'views/yearling/scores.html'"></div></tab>
+  </tabset>
+</div>

@@ -1,25 +1,13 @@
 <div class="container" ng-app="BobtailApp">
 
-  <div id="loader" ng-if="$root.loading">
-    Loading...
+  <div>
+    <ul class="temp-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/yearling">Yearling</a></li>
+      <li><a href="/rosalind">Rosalind</a></li>
+    </ul>
   </div>
 
-  <!-- quick and dirty nav bar -->
-  <div ng-controller="NavCtrl" style="background: black; padding: 10px; color: white">
-    <div class="row">
-      <div class="col-sm-6 pull-left">
-        <a href="/">Home</a> | <a href="/about">About</a>
-      </div>
-      <div class="col-sm-6 text-right">
-        {{taco}}
-        <a href="#" ng-click="showLogin()" ng-hide="currentUser">Login</a>
-        <span ng-show="currentUser">Welcome, {{currentUser.firstName || "User"}}!</span>
-        <a href="#" ng-click="logout()" ng-show="currentUser">Logout</a>
-      </div>
-    </div>
-  </div>
-
-  <alerts></alerts>
   <ng-view></ng-view>
 
 </div>

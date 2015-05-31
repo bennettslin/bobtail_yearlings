@@ -1,0 +1,16 @@
+ul.temp-nav {
+  list-style-type: none;
+}
+
+ul.temp-nav li {
+  display: inline;
+}
+
+.carousel {
+  height: 400;
+}
+
+img.carousel-image {
+  max-height: 400px;
+  margin: auto;
+}
