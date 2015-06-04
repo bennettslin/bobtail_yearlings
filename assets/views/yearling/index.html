@@ -2,33 +2,21 @@
 
 <div class="btn-group" dropdown is-open="status.isopen">
 
+  <a href="#" ng-hide="currentSongIndex == 0" ng-click="switchSong(-1)" class="btn btn-info"><i class="glyphicon glyphicon-arrow-left"></i></a>
+
   <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
     {{songTitles[currentSongIndex]}} <span class="caret"></span>
   </button>
 
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="#" ng-click="changeSong(0)">Didi</a></li>
-    <li><a href="#" ng-click="changeSong(1)">Willy the Cocoa</a></li>
-    <li><a href="#" ng-click="changeSong(2)">Dear Saskia</a></li>
-    <li><a href="#" ng-click="changeSong(3)">Odin</a></li>
-    <li><a href="#" ng-click="changeSong(4)">Ash Wednesday</a></li>
-    <li><a href="#" ng-click="changeSong(5)">Pchelka's Starry Journey</a></li>
-    <li><a href="#" ng-click="changeSong(6)">M</a></li>
-    <li><a href="#" ng-click="changeSong(7)">Good Night, Sita</a></li>
-    <li><a href="#" ng-click="changeSong(8)">Grasshoppers Lie Heavy</a></li>
-    <li><a href="#" ng-click="changeSong(9)">Constellations!</a></li>
-    <li><a href="#" ng-click="changeSong(10)">Look Back in Anger</a></li>
-    <li><a href="#" ng-click="changeSong(11)">Garryowen</a></li>
-    <li><a href="#" ng-click="changeSong(12)">On a Golden Cord</a></li>
-    <li><a href="#" ng-click="changeSong(13)">Kyon?</a></li>
-    <li><a href="#" ng-click="changeSong(14)">Uncanny Valley Boy</a></li>
-    <li><a href="#" ng-click="changeSong(15)">Cremated</a></li>
-    <li><a href="#" ng-click="changeSong(16)">Vegan Proclamation</a></li>
-    <li><a href="#" ng-click="changeSong(17)">My 100,000th Dream</a></li>
-  </ul>
-</div>
+  <a href="#" ng-hide="currentSongIndex == songTitles.length - 1" ng-click="switchSong(1)" class="btn btn-info"><i class="glyphicon glyphicon-arrow-right"></i></a>
 
-<div>Sound Player</div>
+  <ul class="dropdown-menu" role="menu">
+    <li ng-repeat="title in songTitles"><a href="#" ng-click="changeSong($index)">{{title}}</a></li>
+  </ul>
+
+  <a href="#" ng-click="playSong(currentSongIndex)" class="btn btn-info">Load Song</a>
+
+</div>
 
 <div>
   <tabset justified="true">

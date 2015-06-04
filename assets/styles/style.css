@@ -1,3 +1,29 @@
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+/* app */
+
+.app-page-view.ng-enter {
+  transition: all 0.75s ease;
+  -webkit-transition:all 0.75s ease;
+  -moz-transition: all 0.75s ease;
+  -o-transition: all 0.75s ease;
+  opacity: 0;
+}
+
+.app-page-view.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.app-page-view.ng-leave {
+  opacity: 1;
+}
+
+.app-page-view.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+/* temp nav bar */
+
 ul.temp-nav {
   list-style-type: none;
 }
@@ -6,11 +32,67 @@ ul.temp-nav li {
   display: inline;
 }
 
-.carousel {
-  height: 400;
+/* audio player */
+
+.audio-player {
+  background-color: #aaaa88;
 }
 
-img.carousel-image {
-  max-height: 400px;
-  margin: auto;
+/* comic book */
+
+img.comic-page-image {
+  max-width: 480px;
+}
+
+
+.comic-page-image.ng-enter, .comic-page-image.ng-leave {
+  transition: all 0.35s;
+  -webkit-transition:all 0.35s;
+  -moz-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  position: absolute;
+}
+
+.comic-page-image.ng-enter.ng-enter-active {
+  left: 0;
+}
+
+.comic-page-image.ng-leave {
+  left: 0;
+}
+
+.comic-page-prev.ng-enter {
+  left: -100%;
+}
+
+.comic-page-prev.ng-leave.ng-leave-active {
+  left: 100%;
+}
+
+.comic-page-next.ng-enter {
+  left: 100%;
+}
+
+.comic-page-next.ng-leave.ng-leave-active {
+  left: -100%;
+}
+
+/*.comic-button {
+  position: absolute;
+  top: 200px;
+}
+
+.comic-button-left {
+  left: 50px;
+}
+
+.comic-button-right {
+  left: 800px;
+}*/
+
+/* scrolling dropdown */
+
+ul.dropdown-menu {
+  max-height: 168px;
+  overflow-y: auto;
 }

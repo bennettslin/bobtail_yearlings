@@ -1,4 +1,12 @@
-var bobtailApp = angular.module("BobtailApp", ["ngRoute", "ngSanitize", "ui.bootstrap"]);
+var bobtailApp = angular.module("BobtailApp", ["ngAnimate", "ngRoute", "ui.bootstrap", "plangular"])
+
+.config(function(plangularConfigProvider) {
+
+  // plangularConfigProvider.clientId = process.env.SOUNDCLOUD_CLIENT_ID;
+  plangularConfigProvider.clientId = "9a75c80f2485b45360c7135eb3c4191e";
+  console.log("Plangular client id is", plangularConfigProvider.clientId);
+});
+
 
 bobtailApp.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
 

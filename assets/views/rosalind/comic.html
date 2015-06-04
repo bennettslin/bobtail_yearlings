@@ -1,9 +1,25 @@
-<div>
-  <div class="carousel">
-    <carousel interval="0">
-      <slide ng-repeat="slide in slides" active="slide.active">
-        <img ng-src="{{slide.image}}" class="carousel-image">
-      </slide>
-    </carousel>
+<div class="container slider">
+  <div class="row">
+    <div class="col-sm-6">
+
+      <!-- left button -->
+      <a href="#" ng-disabled="currentComicIndex == 0" ng-click="switchComicPage(-1)" class="comic-button comic-button-left btn btn-info" ng-show="buttonIsVisible(0)"><i class="glyphicon glyphicon-arrow-left"></i></a>
+
+      <!-- left page -->
+      <img ng-repeat="slide in slides" class="{{comicDirection == 1 ? 'comic-page-next' : 'comic-page-prev'}} slide comic-page-image" ng-if="comicIndexIsCorrect($index)" ng-src="{{slide.image}}" ng-mouseenter="mousePage(true, 0)" ng-mouseleave="mousePage(false, 0)">
+
+    </div>
+
+    <div class="col-sm-6">
+
+      <!-- right page -->
+      <img ng-repeat="slide in slides" class="{{comicDirection == 1 ? 'comic-page-next' : 'comic-page-prev'}} slide comic-page-image" ng-if="comicIndexIsCorrect($index - 1)" ng-src="{{slide.image}}" ng-mouseenter="mousePage(true, 1)" ng-mouseleave="mousePage(false, 1)">
+
+      <!-- right button -->
+      <a href="#" ng-disabled="currentComicIndex == slides.length - 2" ng-click="switchComicPage(1)" class="comic-button comic-button-right btn btn-info" ng-show="buttonIsVisible(1)"><i class="glyphicon glyphicon-arrow-right"></i></a>
+
+    </div>
+
+
   </div>
 </div>

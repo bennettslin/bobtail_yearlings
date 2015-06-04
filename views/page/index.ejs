@@ -8,6 +8,30 @@
     </ul>
   </div>
 
-  <ng-view></ng-view>
+  <div class="audio-player" plangular="https://soundcloud.com/bennett-lin/sets/rosalind-franklin-meets-her-peppers-ghost">
+    <ul>
+      <li ng-repeat="track in tracks">
+        <button
+          ng-click="playPause($index)"
+          ng-class="{'active': player.playing === track.src}">
+          {{track.title}}
+        </button>
+      </li>
+    </ul>
+    <div ng-if="!track">Loading...</div>
+
+    <button ng-click="previous()">Previous</button>
+    <button ng-click="playPause()">Play/Pause</button>
+    <button ng-click="next()">Next</button>
+
+    <progressbar animate="false"
+      value ="currentTime / duration * 100 || 0"
+      ng-click="seek($event)"
+      ng-value="currentTime / duration">
+      <small>{{ currentTime | hhmmss }} | {{ duration | hhmmss }}</small>
+    </progressbar>
+  </div>
+
+  <div ng-view class="app-page-view"></div>
 
 </div>

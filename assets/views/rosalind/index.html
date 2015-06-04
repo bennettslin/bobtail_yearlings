@@ -2,25 +2,21 @@
 
 <div class="btn-group" dropdown is-open="status.isopen">
 
+  <a href="#" ng-hide="currentSongIndex == 0" ng-click="switchSong(-1)" class="btn btn-info"><i class="glyphicon glyphicon-arrow-left"></i></a>
+
   <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
     {{songTitles[currentSongIndex]}} <span class="caret"></span>
   </button>
 
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="#" ng-click="changeSong(0)">Young Rosalind at the World's Fair</a></li>
-    <li><a href="#" ng-click="changeSong(1)">All the Peppy Paulinas</a></li>
-    <li><a href="#" ng-click="changeSong(2)">Coffee in a Crucible</a></li>
-    <li><a href="#" ng-click="changeSong(3)">Ruptures</a></li>
-    <li><a href="#" ng-click="changeSong(4)">Photograph 51</a></li>
-    <li><a href="#" ng-click="changeSong(5)">Unhatched</a></li>
-    <li><a href="#" ng-click="changeSong(6)">Honest Jim</a></li>
-    <li><a href="#" ng-click="changeSong(7)">Rosalind's Mosaic Path</a></li>
-    <li><a href="#" ng-click="changeSong(8)">Last Labours</a></li>
-    <li><a href="#" ng-click="changeSong(9)">Whale Fall</a></li>
-  </ul>
-</div>
+  <a href="#" ng-hide="currentSongIndex == songTitles.length - 1" ng-click="switchSong(1)" class="btn btn-info"><i class="glyphicon glyphicon-arrow-right"></i></a>
 
-<div>Sound Player</div>
+  <ul class="dropdown-menu" role="menu">
+    <li ng-repeat="title in songTitles"><a href="#" ng-click="changeSong($index)">{{title}}</a></li>
+  </ul>
+
+  <a href="#" ng-click="playSong(currentSongIndex)" class="btn btn-info">Load Song</a>
+
+</div>
 
 <div>
   <tabset justified="true">

@@ -23,7 +23,14 @@
 process.chdir(__dirname);
 
 // Ensure a "sails" can be located:
+
 (function() {
+
+  var dotenv = require("dotenv");
+  dotenv.load();
+
+  // var plangular = require("plangular-3");
+
   var sails;
   try {
     sails = require('sails');

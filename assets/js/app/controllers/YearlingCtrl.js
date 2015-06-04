@@ -1,5 +1,25 @@
 bobtailApp.controller("YearlingCtrl", ["$scope", "$rootScope", function($scope, $rootScope) {
 
+  $scope.currentSongIndex = window.sessionStorage.yearlingSongIndex ? parseInt(window.sessionStorage.yearlingSongIndex) : 0;
+
+  $scope.playSong = function(index) {
+    $rootScope.playerAlbumTitle = "Yearling's Bobtail";
+    $rootScope.playerSongTitle = (index + 1) + ". " + $scope.songTitles[index];
+  }
+
+  $scope.switchSong = function(direction) {
+
+    // do not go beyond first and last songs
+    var limitCondition = direction == -1 ?
+      ($scope.currentSongIndex > 0) :
+      ($scope.currentSongIndex < $scope.songTitles.length - 1);
+
+    if (limitCondition) {
+      $scope.currentSongIndex += direction;
+      window.sessionStorage.rosalindSongIndex = $scope.currentSongIndex;
+    }
+  }
+
   $scope.songTitles = [
     "Didi",
     "Willy the Cocoa",
@@ -41,8 +61,6 @@ bobtailApp.controller("YearlingCtrl", ["$scope", "$rootScope", function($scope, 
     "17_vegan_proclamation",
     "18_100000th_dream"
   ]
-
-  $scope.currentSongIndex = window.sessionStorage.yearlingSongIndex ? parseInt(window.sessionStorage.yearlingSongIndex) : 0;
 
   $scope.changeSong = function(index) {
     $scope.currentSongIndex = index;

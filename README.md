@@ -1,3 +1,11 @@
+Todo
+====
+
+* textured borders for popovers, populate with content, positioning, images from Illustrator
+* figure out SoundCloud API
+* data from SoundCloud to dynamically change page, content!
+* animations for pages and comic book (both responsive)
+
 # bobtail_yearlings
 
 a [Sails](http://sailsjs.org) application
