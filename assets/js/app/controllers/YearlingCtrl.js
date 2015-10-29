@@ -1,5 +1,29 @@
 bobtailApp.controller("YearlingCtrl", ["$scope", "$rootScope", function($scope, $rootScope) {
 
+  $scope.dynamicPopover1 = {
+    content: 'In Germanic folklore, trolls would sometimes snatch a healthy child and leave a changeling in its place. This belief was used to explain children with disabilities.',
+    templateUrl: 'myPopoverTemplate1.html',
+    title: "The song's theme"
+  };
+
+  $scope.dynamicPopover2 = {
+    content: 'This song is about an autistic homeless man who was murdered in my neighbourhood when I was a boy. It also explores my relationship with my autistic brother.',
+    templateUrl: 'myPopoverTemplate2.html',
+    title: 'About this song'
+  };
+
+  $scope.dynamicPopover3 = {
+    content: 'Because the disabled child ate and ate while doing no work in return, it was called a killcrop.',
+    templateUrl: 'myPopoverTemplate3.html',
+    title: 'killcrop'
+  };
+
+    $scope.dynamicPopover4 = {
+    content: 'It was thought that by beating the changeling, it would eventually reveal its true identity and return the healthy child.',
+    templateUrl: 'myPopoverTemplate4.html',
+    title: 'Hit this witch'
+  };
+
   $scope.currentSongIndex = window.sessionStorage.yearlingSongIndex ? parseInt(window.sessionStorage.yearlingSongIndex) : 0;
 
   $scope.playSong = function(index) {
@@ -16,7 +40,7 @@ bobtailApp.controller("YearlingCtrl", ["$scope", "$rootScope", function($scope, 
 
     if (limitCondition) {
       $scope.currentSongIndex += direction;
-      window.sessionStorage.rosalindSongIndex = $scope.currentSongIndex;
+      window.sessionStorage.yearlingSongIndex = $scope.currentSongIndex;
     }
   }
 
